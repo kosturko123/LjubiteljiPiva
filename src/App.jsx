@@ -1,8 +1,8 @@
 import "../src/styles/main.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
-import Dashboard from "./pages/Dashboard";
-import Profil from "./pages/Profil";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Galerija from "./pages/Galerija";
 import FriendList from "./components/FriendList";
 import SearchBar from "./components/SearchBar";
@@ -17,9 +17,9 @@ function App() {
       <Sidebar />
       <FriendList/>
       <Routes>
-        <Route path = "/" element = {<Dashboard/>}/>
+        <Route path = "/" element = {<Login/>}/>
         <Route path = "/galerija" element = {<Galerija/>}/>
-        <Route path = "/profil" element = {<Profil/>}/>
+        <Route path = "/register" element = {<Register/>}/>
       </Routes>
       </div>
       <SearchBar/>

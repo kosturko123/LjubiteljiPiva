@@ -43,13 +43,13 @@ const Sidebar = () => {
                 <img src={Dashboard} alt="dashboard" />
                 <a href="/">login</a>
             </li>
-            <li className={location.pathname === "/galerija" ? "active": ""}>
+            <li className={location.pathname === "/register" ? "active": ""}>
+                <img src={Dashboard} alt="dashboard" />
+                <a href="/register">Register</a>
+            </li>
+            <li className={location.pathname === "/galerija" ? "active" : ""}>
                 <img src={Dashboard} alt="dashboard" />
                 <a href="/galerija">Galerija</a>
-            </li>
-            <li className={location.pathname === "/profil" ? "active" : ""}>
-                <img src={Dashboard} alt="dashboard" />
-                <a href="/profil">Register</a>
             </li>
         </ul>
       </div>
