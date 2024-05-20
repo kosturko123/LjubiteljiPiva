@@ -1,9 +1,17 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { useMenu } from '../Contexts/MenuContext'
+import {useNavigate} from 'react-router-dom'
 
-const Dashboard = () => {
+const Login = () => {
 
-  const setMenu = useMenu()
+  const setMenu = useMenu();
+  const navigate = useNavigate();
+  useEffect(()=>{
+    if(localStorage.getItem("user-info")){
+      navigate("/galerija")
+    }
+  },[])
+
 
   return (
     <div className={setMenu === false? "dashboard":"dashboard active"}>
@@ -29,4 +37,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Login

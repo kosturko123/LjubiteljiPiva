@@ -7,6 +7,7 @@ import Galerija from "./pages/Galerija";
 import FriendList from "./components/FriendList";
 import SearchBar from "./components/SearchBar";
 import {MenuProvider} from "./Contexts/MenuContext"
+import Protected from "./Protected Routes/Protected";
 
 function App() {
  return(
@@ -17,8 +18,8 @@ function App() {
       <Sidebar />
       <FriendList/>
       <Routes>
-        <Route path = "/" element = {<Login/>}/>
-        <Route path = "/galerija" element = {<Galerija/>}/>
+        <Route path = "/login" element = {<Login/>}/>
+        <Route path = "/galerija" element ={<Protected Cmp={Galerija}/>}/> 
         <Route path = "/register" element = {<Register/>}/>
       </Routes>
       </div>
