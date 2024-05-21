@@ -13,6 +13,8 @@ function App() {
  return(
   <MenuProvider>
   <Router>
+  {
+    localStorage.getItem("user-info")?
     <div className="App">
       <div className="pageContainer">
       <Sidebar />
@@ -25,9 +27,52 @@ function App() {
       </div>
       <SearchBar/>
     </div>
+    :
+    <div className="App">
+      <div className="pageContainer">
+      <Sidebar />
+      <Routes>
+        <Route path = "/login" element = {<Login/>}/>
+        <Route path = "/galerija" element ={<Protected Cmp={Galerija}/>}/> 
+        <Route path = "/register" element = {<Register/>}/>
+      </Routes>
+      </div>
+    </div>
+  }
   </Router>
   </MenuProvider>
  );
 }
 
 export default App;
+
+/**
+ * 
+ * {
+ * localStorage.getItem(user-info)?
+ * <div className="App">
+      <div className="pageContainer">
+      <Sidebar />
+      <FriendList/>
+      <Routes>
+        <Route path = "/login" element = {<Login/>}/>
+        <Route path = "/galerija" element ={<Protected Cmp={Galerija}/>}/> 
+        <Route path = "/register" element = {<Register/>}/>
+      </Routes>
+      </div>
+      <SearchBar/>
+    </div>
+    :
+    <div className="App">
+      <div className="pageContainer">
+      <Sidebar />
+      <Routes>
+        <Route path = "/login" element = {<Login/>}/>
+        <Route path = "/galerija" element ={<Protected Cmp={Galerija}/>}/> 
+        <Route path = "/register" element = {<Register/>}/>
+      </Routes>
+      </div>
+    </div>
+  }
+ * 
+ */
