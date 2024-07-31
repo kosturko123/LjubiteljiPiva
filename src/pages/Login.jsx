@@ -31,9 +31,15 @@ const Login = () => {
 
     result = await result.json();
     localStorage.setItem("user-info",JSON.stringify(result));
+    if(localStorage.getItem("user-info") == "Email ili lozinka su pogresni"){
+      
+      
+      localStorage.clear();
+      navigate("/galerija");
+      
+    }
+    console.log(localStorage.getItem("user-info"));
     navigate("/galerija");
-
-
 
   }
 

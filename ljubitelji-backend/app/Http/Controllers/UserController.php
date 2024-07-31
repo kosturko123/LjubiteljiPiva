@@ -22,7 +22,7 @@ class UserController extends Controller
         
         $user = User::where('email', $req->email)->first();
         if(!$user || !Hash::check($req->password, $user->password)) {
-            return ["error"=>"Email ili lozinka pogresni"];
+            return "Email ili lozinka su pogresni";     
         }
 
         return $user;
