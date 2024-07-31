@@ -9,7 +9,7 @@ const Register = () => {
     if(localStorage.getItem("user-info")){
       navigate("/galerija")
     }
-  },[])
+  },[]) 
 
   const setMenu = useMenu();
   const [username, setUserName] = useState("");

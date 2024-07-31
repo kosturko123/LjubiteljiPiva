@@ -18,14 +18,10 @@ const Sidebar = () => {
     navigate("/login");
   }
   
-
  /* const [closeMenu, setCloseMenu] = useState(false);
-
   const handleCloseMenu = ()=>{
-
     setCloseMenu(!closeMenu);
-  }
-  */
+  }*/
 
   const setMenu = useMenu();
   const updateMenu = useMenuUpdate();
@@ -68,6 +64,10 @@ const Sidebar = () => {
             <li className={location.pathname === "/galerija" ? "active" : ""}>
             <img src={Dashboard} alt="dashboard" />
             <a href="/galerija">Galerija</a>
+            </li>
+            <li className="addPost">
+                <img src={Dashboard} alt="dashboard" />
+                <a href="/addpost">Nova Objava</a>
             </li>
             <li className="logout">
                 <img src={Dashboard} alt="dashboard" />

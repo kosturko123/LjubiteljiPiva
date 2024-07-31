@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Galerija from "./pages/Galerija";
+import AddPost from "./pages/AddPost";
 import FriendList from "./components/FriendList";
 import SearchBar from "./components/SearchBar";
 import {MenuProvider} from "./Contexts/MenuContext"
@@ -22,18 +23,20 @@ function App() {
       <Routes>
         <Route path = "/login" element = {<Login/>}/>
         <Route path = "/galerija" element ={<Protected Cmp={Galerija}/>}/> 
+        <Route path = "/addpost" element ={<Protected Cmp={AddPost}/>}/> 
         <Route path = "/register" element = {<Register/>}/>
       </Routes>
       </div>
       <SearchBar/>
     </div>
-    :
+    : //koje ovo i ovo
     <div className="App">
       <div className="pageContainer">
       <Sidebar />
       <Routes>
         <Route path = "/login" element = {<Login/>}/>
         <Route path = "/galerija" element ={<Protected Cmp={Galerija}/>}/> 
+        <Route path = "/addpost" element ={<Protected Cmp={AddPost}/>}/> 
         <Route path = "/register" element = {<Register/>}/>
       </Routes>
       </div>

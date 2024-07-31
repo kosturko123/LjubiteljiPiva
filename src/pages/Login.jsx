@@ -17,7 +17,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   async function logIn(e){
-
     e.preventDefault();
     let item = {email,password}
     let result = await fetch("http://localhost:8000/api/login",{
@@ -30,11 +29,12 @@ const Login = () => {
     });
 
     result = await result.json();
-    localStorage.setItem("user-info",JSON.stringify(result));
+    if(localStorage.setItem("user-info",JSON.stringify(result)) != "Email ili lozinka pogresni"){
+      localStorage.setItem("user-info",JSON.stringify(result));
+      navigate("/galerija");
+    }
+    localStorage.clear();
     navigate("/galerija");
-
-
-
   }
 
 
@@ -55,9 +55,7 @@ const Login = () => {
         </div>
           <button type='submit'>Login</button>
         </form>
-
       </div>
-      
     </div>
   )
 }
